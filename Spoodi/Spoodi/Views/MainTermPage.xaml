@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:BasePage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Spoodi.Views.MainTermPage"
+             xmlns:controls="clr-namespace:Spoodi.Controls"
+             xmlns:views="clr-namespace:Spoodi.Views;assembly=Spoodi"
+             xmlns:viewmodels="clr-namespace:Spoodi.Models.ViewModels"
+             xmlns:converters="clr-namespace:Spoodi.Converters"
+             xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:z="clr-namespace:Xamarin.Forms.BackgroundVideoView;assembly=Xamarin.Forms.BackgroundVideoView">
+
+    
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:BoolToStringConverter
+                x:Key="FeaturedHeightConverter"
+                FalseString="170"
+                TrueString="240" />
+
+            <converters:BoolToStringConverter
+                x:Key="FeaturedOffsetYConverter"
+                FalseString="40"
+                TrueString="100" />
+
+            <converters:BoolToStringConverter
+                x:Key="FeaturedOffsetXConverter"
+                FalseString="60"
+                TrueString="60" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid Margin="30, 30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <!--<controls:HamburgerMenuBar
+                    Grid.Row="0"
+                    Title="Dashboard"
+                    MenuCommand = "{Binding MenuCommand}" />-->
+            </Grid>
+            <Grid Grid.Column="1">
+                <Image Source="spoodi_logo"/>
+            </Grid>
+            <Grid Grid.Column="2">
+                <ImageButton
+                                        x:Name="BasketIcon"
+                                        Padding="10"
+                                        WidthRequest="30"
+                                        Command="{Binding MenuToggle}"
+                    
+                    
+                                        Source="basket_icon"
+                                         />
+            </Grid>
+            <Grid Grid.Column="3">
+                <pancake:PancakeView
+                                        BackgroundColor="Black"
+                                        CornerRadius="7">
+                    <pancake:PancakeView.Triggers>
+                        <DataTrigger
+                                        Binding="{Binding ShoppingCart.ItemCount}"
+                                        TargetType="pancake:PancakeView"
+                                        Value="0">
+                            <Setter Property="IsVisible" Value="False" />
+                        </DataTrigger>
+                    </pancake:PancakeView.Triggers>
+                    <Label
+                                    FontSize="10"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding ShoppingCart.ItemCount}"
+                                    TextColor="White"
+                                    VerticalOptions="Center" />
+                </pancake:PancakeView>
+            </Grid>
+
+
+        </Grid>
+        <Grid Grid.Row="1">
+            <ScrollView HorizontalScrollBarVisibility="Never"  HeightRequest="100" Orientation="Horizontal" 
+                            HorizontalOptions="FillAndExpand">
+                <StackLayout Orientation="Horizontal">
+
+                    <Image HeightRequest="80" Source="Ketch_button2_Schatten"/>
+
+                    <Image HeightRequest="80" Source="logo_bowlroll"/>
+
+                    <Image HeightRequest="80" Source="logo_bubbletom_1"/>
+
+                    <Image HeightRequest="80" Source="logo_getraenke"/>
+
+                    <Image HeightRequest="80" Source="logo_happyfish"/>
+
+                    <Image HeightRequest="80" Source="logo_pho_1"/>
+
+                    <Image HeightRequest="80" Source="logo_pita_1"/>
+
+                    <Image HeightRequest="80" Source="logo_risingsun"/>
+
+                    <Image HeightRequest="80" Source="logo_secret"/>
+
+                    <Image HeightRequest="80" Source="logo_snack"/>
+
+                </StackLayout>
+            </ScrollView>
+        </Grid>
+        <Grid Grid.Row="2">
+                <ScrollView x:Name="ScrollContainer" AbsoluteLayout.LayoutBounds="10,190, 340, 450">
+                    <FlexLayout
+                BindableLayout.ItemsSource="{Binding Products}"
+                Direction="Column"
+                HeightRequest="1300"
+                HorizontalOptions="Center"
+                Wrap="Wrap">
+
+                        <BindableLayout.ItemTemplate>
+
+                            <DataTemplate>
+                            <controls:ProductDisplay
+                           AddToCartClicked="ProductDisplay_AddToCartClicked"
+                            HeightRequest="{Binding IsFeatured, Converter={StaticResource FeaturedHeightConverter}}"
+                            ImageOffsetX="{Binding IsFeatured, Converter={StaticResource FeaturedOffsetXConverter}}"
+                            ImageOffsetY="{Binding IsFeatured, Converter={StaticResource FeaturedOffsetYConverter}}"
+                            ProductClicked="TapGestureRecognizer_Tapped"
+                                >
+
+                                <!--<controls:ProductDisplay.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                            </controls:ProductDisplay.GestureRecognizers>-->
+                                </controls:ProductDisplay>
+                            </DataTemplate>
+
+                        </BindableLayout.ItemTemplate>
+
+                    </FlexLayout>
+
+                </ScrollView>
+            
+
+        </Grid>
+        <controls:ProductDisplay x:Name="FakeProductCell" IsVisible="False">
+            <controls:ProductDisplay.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
+            </controls:ProductDisplay.GestureRecognizers>
+        </controls:ProductDisplay>
+        <controls:ProductDisplayPopover
+            x:Name="PagePopover"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            IsVisible="False" />
+
+        <!--<controls:ShoppingCartPopover
+            x:Name="CartPopover"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            IsVisible="False" />-->
+
+        <!--<controls:PlofilePage
+            x:Name="ProfilePopover"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            IsVisible="False"/>-->
+    </Grid>
+
+</views:BasePage>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Grid 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:resources="clr-namespace:Spoodi.Resources;assembly=Spoodi"
+    mc:Ignorable="d"
+    x:Class="Spoodi.Controls.Toolbar"
+    Padding="34,16"
+    BackgroundColor="White">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="40"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="40"/>
+    </Grid.ColumnDefinitions>
+    
+    <ContentView
+        Grid.Column="0"
+        WidthRequest="20">
+        <forms:SvgCachedImage
+            Source="{x:Static resources:Images.ArrowBack}"
+            HorizontalOptions="Start"
+            WidthRequest="16"
+            HeightRequest="16"
+            Aspect="AspectFit"/>
+        <ContentView.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding BackButtonCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}}"/>
+        </ContentView.GestureRecognizers>
+    </ContentView>
+
+    <Label
+        Grid.Column="1"
+        Text="{Binding Title, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}}"
+        HorizontalOptions="Center"
+        VerticalOptions="Center"
+        />
+</Grid>
