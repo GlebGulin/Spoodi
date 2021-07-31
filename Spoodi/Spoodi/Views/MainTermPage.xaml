@@ -56,8 +56,8 @@
                                         Padding="10"
                                         WidthRequest="30"
                                         Command="{Binding MenuToggle}"
-                    
-                    
+                                        BackgroundColor="White"
+                                        Clicked="BasketIcon_Clicked"
                                         Source="basket_icon"
                                          />
             </Grid>
@@ -157,11 +157,11 @@
             AbsoluteLayout.LayoutFlags="All"
             IsVisible="False" />
 
-        <!--<controls:ShoppingCartPopover
+        <controls:ShoppingCartPopover
             x:Name="CartPopover"
             AbsoluteLayout.LayoutBounds="0,0,1,1"
             AbsoluteLayout.LayoutFlags="All"
-            IsVisible="False" />-->
+            IsVisible="False" />
 
         <!--<controls:PlofilePage
             x:Name="ProfilePopover"

@@ -12,13 +12,15 @@
     mc:Ignorable="d">
 
     <pancake:PancakeView
-        Margin="11"
+        Margin="10"
         BackgroundColor="{Binding HeroColor}"
         CornerRadius="20"
         WidthRequest="160">
         <pancake:PancakeView.GestureRecognizers>
             <TapGestureRecognizer Tapped="TapProductGestureRecognizer_Tapped" />
         </pancake:PancakeView.GestureRecognizers>
+
+
         <Grid>
             <BoxView
                 x:Name="AddBackground"
@@ -29,6 +31,7 @@
                 VerticalOptions="Start"
                 WidthRequest="40"
                 Color="White" />
+
             <Label
                 x:Name="AddButton"
                 FontSize="20"

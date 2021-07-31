@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Spoodi.Models.ViewModels;
 using Spoodi.Controls;
 using System;
+using Spoodi.ViewModels;
 
 namespace Spoodi.Views
 {
@@ -189,7 +190,7 @@ namespace Spoodi.Views
             FakeProductCell.IsVisible = true;
 
             // set the selected item
-            ((MainViewModel)this.BindingContext).SelectedProduct = element.BindingContext as ProductViewModel;
+            ((MainTermPageViewModel)this.BindingContext).SelectedProduct = element.BindingContext as ProductViewModel;
 
             // set the layout to the same postion
             var yScroll = ScrollContainer.ScrollY;
@@ -245,14 +246,14 @@ namespace Spoodi.Views
             ProductViewModel item = element.BindingContext as ProductViewModel;
 
             // add a shopping card item
-            ((MainViewModel)this.BindingContext).ShoppingCart.IncrementOrder(item);
+            ((MainTermPageViewModel)this.BindingContext).ShoppingCart.IncrementOrder(item);
 
         }
 
-        //private void BasketIcon_Clicked(object sender, EventArgs e)
-        //{
-        //    CartPopover.IsVisible = true;
-        //}
+        private void BasketIcon_Clicked(object sender, EventArgs e)
+        {
+            CartPopover.IsVisible = true;
+        }
 
     }
 }

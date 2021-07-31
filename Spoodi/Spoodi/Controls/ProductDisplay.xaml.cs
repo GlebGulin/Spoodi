@@ -22,21 +22,12 @@ namespace Spoodi.Controls
         public static readonly BindableProperty ImageOffsetXProperty =
             BindableProperty.Create(nameof(ImageOffsetX), typeof(int), typeof(ProductDisplay), 0);
 
-        //public static readonly BindableProperty ProductsProperty =
-        //   BindableProperty.Create(nameof(Products), typeof(List<ProductViewModel>), typeof(ProductDisplay), 0);
-
 
         public int ImageOffsetY
         {
             get => (int)GetValue(ImageOffsetYProperty);
             set => SetValue(ImageOffsetYProperty, value);
         }
-
-        //public string Products
-        //{
-        //    get => (string)GetValue(ProductsProperty);
-        //    set => SetValue(ProductsProperty, value);
-        //}
 
         public int ImageOffsetX
         {
