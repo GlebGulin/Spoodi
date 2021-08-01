@@ -1,4 +1,4 @@
-﻿<Grid 
+﻿<ContentView 
     xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
@@ -8,39 +8,9 @@
     mc:Ignorable="d"
     x:Class="Spoodi.Controls.HamburgerMenuBar"
     Padding="36,18">
-
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="40"/>
-        <ColumnDefinition Width="*"/>
-        <ColumnDefinition Width="40"/>
-    </Grid.ColumnDefinitions>
-
-    <ContentView
-        Grid.Column="0"
-        Grid.Row="0"
-        WidthRequest="20">
-        <forms:SvgCachedImage
-                BackgroundColor="Transparent"
-                HorizontalOptions="Center"
-                HeightRequest="20"
-                WidthRequest="20"
-                Source="{x:Static resources:Images.Burger}">
-        </forms:SvgCachedImage>
-        <!--<ImageButton
-                                    x:Name="HamburgerButton"
-                                    Padding="10"
-                                    BackgroundColor="White"
-                                    Source="hamburger_icon" />-->
-        <ContentView.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding MenuCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}}"/>
-        </ContentView.GestureRecognizers>
-    </ContentView>
-
-    <Label
-        Grid.Column="1"
-        Grid.Row="0"
-        Text="{Binding Title, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}}"
-        HorizontalOptions="Center"
-        VerticalOptions="Center"
-        />
-</Grid>
+    <Image Source="hamburger_icon">
+        <Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding MenuCommand, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type Image}}}"/>
+        </Image.GestureRecognizers>
+    </Image>
+</ContentView>

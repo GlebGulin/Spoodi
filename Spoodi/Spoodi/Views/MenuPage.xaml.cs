@@ -1,7 +1,7 @@
 ﻿
 namespace Spoodi.Views
 {
-    public partial class MenuPage
+    public partial class MenuPage : BasePage
     {
         public MenuPage()
         {

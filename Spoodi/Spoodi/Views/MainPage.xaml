@@ -53,7 +53,7 @@
                                     Source="hamburger_icon" />-->
                         <controls:HamburgerMenuBar
                             Grid.Row="0"
-                            Title="Dashboard"
+                            
                             MenuCommand="{Binding MenuCommand}" />
                     </Grid>
 

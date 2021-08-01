@@ -30,6 +30,8 @@ namespace Spoodi
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<MainTermPage, MainTermPageViewModel>();
+            containerRegistry.RegisterForNavigation<HomeFlyoutPage>();
+            containerRegistry.RegisterForNavigation<MenuPage, MenuPageViewModel>();
         }
     }
 }

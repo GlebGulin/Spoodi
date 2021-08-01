@@ -16,7 +16,7 @@
         <ColumnDefinition Width="40"/>
     </Grid.ColumnDefinitions>
     
-    <ContentView
+    <!--<ContentView
         Grid.Column="0"
         WidthRequest="20">
         <forms:SvgCachedImage
@@ -35,5 +35,5 @@
         Text="{Binding Title, Source={RelativeSource Mode=FindAncestor, AncestorType={x:Type Grid}}}"
         HorizontalOptions="Center"
         VerticalOptions="Center"
-        />
+        />-->
 </Grid>

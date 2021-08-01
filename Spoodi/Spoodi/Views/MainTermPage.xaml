@@ -8,6 +8,8 @@
              xmlns:viewmodels="clr-namespace:Spoodi.Models.ViewModels"
              xmlns:converters="clr-namespace:Spoodi.Converters"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+            xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+            xmlns:resources="clr-namespace:Spoodi.Resources;assembly=Spoodi"
              xmlns:z="clr-namespace:Xamarin.Forms.BackgroundVideoView;assembly=Xamarin.Forms.BackgroundVideoView">
 
     
@@ -36,16 +38,31 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="3*" />
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0">
+            <Grid Grid.Column="0" HorizontalOptions="Start">
+                <!--<Image Source="hamburger_icon" />-->
                 <!--<controls:HamburgerMenuBar
                     Grid.Row="0"
-                    Title="Dashboard"
+                    Title="MainTermPage"
                     MenuCommand = "{Binding MenuCommand}" />-->
+                <!--<forms:SvgCachedImage
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Center"
+                    HeightRequest="20"
+                    WidthRequest="20"
+                    Source="{x:Static resources:Images.Burger}"/>-->
+                <!--<controls:HamburgerMenuBar
+                    Title="Test"
+                    MenuCommand = "{Binding MenuCommand}"/>-->
+
+                <Image Source="hamburger_icon" />
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding MenuCommand}" />
+                </Grid.GestureRecognizers>
             </Grid>
             <Grid Grid.Column="1">
                 <Image Source="spoodi_logo"/>
@@ -55,7 +72,6 @@
                                         x:Name="BasketIcon"
                                         Padding="10"
                                         WidthRequest="30"
-                                        Command="{Binding MenuToggle}"
                                         BackgroundColor="White"
                                         Clicked="BasketIcon_Clicked"
                                         Source="basket_icon"

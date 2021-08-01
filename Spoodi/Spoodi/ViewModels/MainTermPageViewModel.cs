@@ -28,7 +28,7 @@ namespace Spoodi.ViewModels
 
         public ShoppingCartViewModel ShoppingCart { get; set; }
         public ICommand TestCommand => new Command(Test);
-        public ICommand MenuToggle => new Command(ToggleMenu);
+        
         public ICommand RemoveItemCommand => new Command<ShoppingCartItem>(RemoveItem);
 
         public MainTermPageViewModel(INavigationService navigationService, IEventAggregator eventAggregator)
@@ -191,6 +191,7 @@ namespace Spoodi.ViewModels
         {
             base.OnNavigatedTo(parameters);
         }
+        public ICommand MenuCommand => new Command(() => _eventAggregator.GetEvent<ToggleMasterDetailMenuEvent>().Publish());
 
         private void Test()
         {
