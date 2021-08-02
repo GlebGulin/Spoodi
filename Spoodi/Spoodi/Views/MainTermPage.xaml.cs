@@ -5,6 +5,7 @@ using Spoodi.Models.ViewModels;
 using Spoodi.Controls;
 using System;
 using Spoodi.ViewModels;
+using Xamarin.CommunityToolkit.UI.Views;
 
 namespace Spoodi.Views
 {
@@ -160,6 +161,7 @@ namespace Spoodi.Views
             SizeChanged -= MainPage_SizeChanged;
         }
 
+       
 
         protected override void OnSizeAllocated(double width, double height)
         {
@@ -176,7 +178,11 @@ namespace Spoodi.Views
         //    ProfilePopover.IsVisible = true;
         //}
 
-
+        //private void Handle_Tapped(object sender, EventArgs e)
+        //{
+        //    MasterDetailPage nav = new MasterDetailPage();
+        //    nav.IsPresented = true;
+        //}
         private async void TapGestureRecognizer_Tapped(object sender, EventArgs e)
         {
             // the user has tapped on an element
@@ -213,6 +219,11 @@ namespace Spoodi.Views
 
         }
 
+        public void OnLeftButtonClicked(object? sender, EventArgs e)
+            => SideMenuView.State = SideMenuState.LeftMenuShown;
+
+        public void OnRightButtonClicked(object? sender, EventArgs e)
+            => SideMenuView.State = SideMenuState.RightMenuShown;
         internal async Task HidePopover()
         {
 

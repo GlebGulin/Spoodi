@@ -11,11 +11,11 @@ using Xamarin.Forms.Xaml;
 namespace Spoodi.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class HomeFlyoutPage : FlyoutPage
+    public partial class HomeMasterDetailPage : MasterDetailPage
     {
         readonly IEventAggregator EventAggregator;
 
-        public HomeFlyoutPage(IEventAggregator eventAggregator)
+        public HomeMasterDetailPage(IEventAggregator eventAggregator)
         {
             InitializeComponent();
 

@@ -7,6 +7,7 @@
              xmlns:views="clr-namespace:Spoodi.Views;assembly=Spoodi"
              xmlns:viewmodels="clr-namespace:Spoodi.Models.ViewModels"
              xmlns:converters="clr-namespace:Spoodi.Converters"
+            xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
             xmlns:resources="clr-namespace:Spoodi.Resources;assembly=Spoodi"
@@ -31,44 +32,37 @@
                 TrueString="60" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid Margin="30, 30">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto" />
-            <RowDefinition Height="Auto" />
-        </Grid.RowDefinitions>
-        <Grid Grid.Row="0">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="3*" />
-                <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="2*" />
-                <ColumnDefinition Width="1*" />
-            </Grid.ColumnDefinitions>
-            <Grid Grid.Column="0" HorizontalOptions="Start">
-                <!--<Image Source="hamburger_icon" />-->
-                <!--<controls:HamburgerMenuBar
-                    Grid.Row="0"
-                    Title="MainTermPage"
-                    MenuCommand = "{Binding MenuCommand}" />-->
-                <!--<forms:SvgCachedImage
-                    BackgroundColor="Transparent"
-                    HorizontalOptions="Center"
-                    HeightRequest="20"
-                    WidthRequest="20"
-                    Source="{x:Static resources:Images.Burger}"/>-->
-                <!--<controls:HamburgerMenuBar
-                    Title="Test"
-                    MenuCommand = "{Binding MenuCommand}"/>-->
+    <xct:SideMenuView x:Name="SideMenuView">
+        <!-- MainView -->
+        
+        <StackLayout BackgroundColor="White"
+                     xct:ShadowEffect.Color="Black">
+            <Grid Margin="30, 30">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="3*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0" HorizontalOptions="Start">
 
-                <Image Source="hamburger_icon" />
-                <Grid.GestureRecognizers>
-                    <TapGestureRecognizer Command="{Binding MenuCommand}" />
-                </Grid.GestureRecognizers>
-            </Grid>
-            <Grid Grid.Column="1">
-                <Image Source="spoodi_logo"/>
-            </Grid>
-            <Grid Grid.Column="2">
-                <ImageButton
+                        <ImageButton Source="hamburger_icon" 
+                                     Clicked="OnLeftButtonClicked">
+                            
+                        </ImageButton>
+
+
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Image Source="spoodi_logo"/>
+                    </Grid>
+                    <Grid Grid.Column="2">
+                        <ImageButton
                                         x:Name="BasketIcon"
                                         Padding="10"
                                         WidthRequest="30"
@@ -76,71 +70,71 @@
                                         Clicked="BasketIcon_Clicked"
                                         Source="basket_icon"
                                          />
-            </Grid>
-            <Grid Grid.Column="3">
-                <pancake:PancakeView
+                    </Grid>
+                    <Grid Grid.Column="3">
+                        <pancake:PancakeView
                                         BackgroundColor="Black"
                                         CornerRadius="7">
-                    <pancake:PancakeView.Triggers>
-                        <DataTrigger
+                            <pancake:PancakeView.Triggers>
+                                <DataTrigger
                                         Binding="{Binding ShoppingCart.ItemCount}"
                                         TargetType="pancake:PancakeView"
                                         Value="0">
-                            <Setter Property="IsVisible" Value="False" />
-                        </DataTrigger>
-                    </pancake:PancakeView.Triggers>
-                    <Label
+                                    <Setter Property="IsVisible" Value="False" />
+                                </DataTrigger>
+                            </pancake:PancakeView.Triggers>
+                            <Label
                                     FontSize="10"
                                     HorizontalOptions="Center"
                                     Text="{Binding ShoppingCart.ItemCount}"
                                     TextColor="White"
                                     VerticalOptions="Center" />
-                </pancake:PancakeView>
-            </Grid>
+                        </pancake:PancakeView>
+                    </Grid>
 
 
-        </Grid>
-        <Grid Grid.Row="1">
-            <ScrollView HorizontalScrollBarVisibility="Never"  HeightRequest="100" Orientation="Horizontal" 
+                </Grid>
+                <Grid Grid.Row="1">
+                    <ScrollView HorizontalScrollBarVisibility="Never"  HeightRequest="100" Orientation="Horizontal" 
                             HorizontalOptions="FillAndExpand">
-                <StackLayout Orientation="Horizontal">
+                        <StackLayout Orientation="Horizontal">
 
-                    <Image HeightRequest="80" Source="Ketch_button2_Schatten"/>
+                            <Image HeightRequest="80" Source="Ketch_button2_Schatten"/>
 
-                    <Image HeightRequest="80" Source="logo_bowlroll"/>
+                            <Image HeightRequest="80" Source="logo_bowlroll"/>
 
-                    <Image HeightRequest="80" Source="logo_bubbletom_1"/>
+                            <Image HeightRequest="80" Source="logo_bubbletom_1"/>
 
-                    <Image HeightRequest="80" Source="logo_getraenke"/>
+                            <Image HeightRequest="80" Source="logo_getraenke"/>
 
-                    <Image HeightRequest="80" Source="logo_happyfish"/>
+                            <Image HeightRequest="80" Source="logo_happyfish"/>
 
-                    <Image HeightRequest="80" Source="logo_pho_1"/>
+                            <Image HeightRequest="80" Source="logo_pho_1"/>
 
-                    <Image HeightRequest="80" Source="logo_pita_1"/>
+                            <Image HeightRequest="80" Source="logo_pita_1"/>
 
-                    <Image HeightRequest="80" Source="logo_risingsun"/>
+                            <Image HeightRequest="80" Source="logo_risingsun"/>
 
-                    <Image HeightRequest="80" Source="logo_secret"/>
+                            <Image HeightRequest="80" Source="logo_secret"/>
 
-                    <Image HeightRequest="80" Source="logo_snack"/>
+                            <Image HeightRequest="80" Source="logo_snack"/>
 
-                </StackLayout>
-            </ScrollView>
-        </Grid>
-        <Grid Grid.Row="2">
-                <ScrollView x:Name="ScrollContainer" AbsoluteLayout.LayoutBounds="10,190, 340, 450">
-                    <FlexLayout
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <ScrollView x:Name="ScrollContainer" AbsoluteLayout.LayoutBounds="10,190, 340, 450">
+                        <FlexLayout
                 BindableLayout.ItemsSource="{Binding Products}"
                 Direction="Column"
                 HeightRequest="1300"
                 HorizontalOptions="Center"
                 Wrap="Wrap">
 
-                        <BindableLayout.ItemTemplate>
+                            <BindableLayout.ItemTemplate>
 
-                            <DataTemplate>
-                            <controls:ProductDisplay
+                                <DataTemplate>
+                                    <controls:ProductDisplay
                            AddToCartClicked="ProductDisplay_AddToCartClicked"
                             HeightRequest="{Binding IsFeatured, Converter={StaticResource FeaturedHeightConverter}}"
                             ImageOffsetX="{Binding IsFeatured, Converter={StaticResource FeaturedOffsetXConverter}}"
@@ -148,42 +142,71 @@
                             ProductClicked="TapGestureRecognizer_Tapped"
                                 >
 
-                                <!--<controls:ProductDisplay.GestureRecognizers>
+                                        <!--<controls:ProductDisplay.GestureRecognizers>
                                 <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
                             </controls:ProductDisplay.GestureRecognizers>-->
-                                </controls:ProductDisplay>
-                            </DataTemplate>
+                                    </controls:ProductDisplay>
+                                </DataTemplate>
 
-                        </BindableLayout.ItemTemplate>
+                            </BindableLayout.ItemTemplate>
 
-                    </FlexLayout>
+                        </FlexLayout>
 
-                </ScrollView>
-            
+                    </ScrollView>
 
-        </Grid>
-        <controls:ProductDisplay x:Name="FakeProductCell" IsVisible="False">
-            <controls:ProductDisplay.GestureRecognizers>
-                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
-            </controls:ProductDisplay.GestureRecognizers>
-        </controls:ProductDisplay>
-        <controls:ProductDisplayPopover
+
+                </Grid>
+                <controls:ProductDisplay x:Name="FakeProductCell" IsVisible="False">
+                    <controls:ProductDisplay.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
+                    </controls:ProductDisplay.GestureRecognizers>
+                </controls:ProductDisplay>
+                <controls:ProductDisplayPopover
             x:Name="PagePopover"
             AbsoluteLayout.LayoutBounds="0,0,1,1"
             AbsoluteLayout.LayoutFlags="All"
             IsVisible="False" />
 
-        <controls:ShoppingCartPopover
+                <controls:ShoppingCartPopover
             x:Name="CartPopover"
             AbsoluteLayout.LayoutBounds="0,0,1,1"
             AbsoluteLayout.LayoutFlags="All"
             IsVisible="False" />
 
-        <!--<controls:PlofilePage
+                <!--<controls:PlofilePage
             x:Name="ProfilePopover"
             AbsoluteLayout.LayoutBounds="0,0,1,1"
             AbsoluteLayout.LayoutFlags="All"
             IsVisible="False"/>-->
-    </Grid>
+            </Grid>
+            <Slider />
+        </StackLayout>
+
+        
+
+        <!-- LeftMenu -->
+        <StackLayout
+            xct:SideMenuView.Position="LeftMenu"
+            xct:SideMenuView.MenuWidthPercentage=".5"
+            xct:SideMenuView.MainViewScaleFactor=".95"
+            BackgroundColor="Orange">
+
+            <Label Text="This is the left menu view"/>
+        </StackLayout>
+
+        <!-- RightMenu -->
+        <StackLayout
+            xct:SideMenuView.Position="RightMenu"
+            xct:SideMenuView.MenuWidthPercentage=".3"
+            xct:SideMenuView.MenuGestureEnabled="False"
+            BackgroundColor="LightGreen">
+
+            
+        </StackLayout>
+
+    </xct:SideMenuView>
+    
+    
+
 
 </views:BasePage>
