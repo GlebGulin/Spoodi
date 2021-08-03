@@ -4,7 +4,10 @@ using Prism.Events;
 using Prism.Mvvm;
 using Prism.Navigation;
 using Spoodi.Event;
+using Spoodi.Extensions;
 using Spoodi.Models.ViewModels;
+using Spoodi.Views;
+using Spoodi.Views.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -192,6 +195,8 @@ namespace Spoodi.ViewModels
             base.OnNavigatedTo(parameters);
         }
         public ICommand MenuCommand => new Command(() => _eventAggregator.GetEvent<ToggleMasterDetailMenuEvent>().Publish());
+        public ICommand BenutzerdatenCommand => new Command(async () => await NavigationService.NavigateToAsync<BenutzerdatenPage>());
+        public ICommand FavoritenCommand => new Command(async () => await NavigationService.NavigateToAsync<FavoritenPage>());
 
         private void Test()
         {

@@ -2,7 +2,7 @@
 <views:BasePage 
     xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Spoodi.Views.MainTermPage"
+             x:Class="Spoodi.Views.HomePage"
              xmlns:controls="clr-namespace:Spoodi.Controls"
              xmlns:views="clr-namespace:Spoodi.Views;assembly=Spoodi"
              xmlns:viewmodels="clr-namespace:Spoodi.Models.ViewModels"
@@ -52,7 +52,9 @@
                     <Grid Grid.Column="0" HorizontalOptions="Start">
 
                         <ImageButton Source="hamburger_icon" 
+                                     BackgroundColor="White"
                                      Clicked="OnLeftButtonClicked">
+                            
                             
                         </ImageButton>
 
@@ -179,7 +181,6 @@
             AbsoluteLayout.LayoutFlags="All"
             IsVisible="False"/>-->
             </Grid>
-            <Slider />
         </StackLayout>
 
         
@@ -187,21 +188,73 @@
         <!-- LeftMenu -->
         <StackLayout
             xct:SideMenuView.Position="LeftMenu"
-            xct:SideMenuView.MenuWidthPercentage=".5"
+            xct:SideMenuView.MenuWidthPercentage=".7"
             xct:SideMenuView.MainViewScaleFactor=".95"
-            BackgroundColor="Orange">
+            BackgroundColor="{x:StaticResource ButtonBackgroundColor}">
 
-            <Label Text="This is the left menu view"/>
-        </StackLayout>
+            <Grid Margin="30,40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <Grid Grid.Row="1">
+                    <Label Text="Benutzerdaten" Style="{StaticResource MenuItem}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLeftLinkClicked" Command="{Binding BenutzerdatenCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <Grid Grid.Row="2">
+                    <Label Text="Favoriten" Style="{StaticResource MenuItem}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnLeftLinkClicked" Command="{Binding FavoritenCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <Grid Grid.Row="3" >
+                    <Label Text="Zahlungsmittel" Style="{StaticResource MenuItem}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BenutzerdatenCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <Grid Grid.Row="4" >
+                    <Label Text="Karte" Style="{StaticResource MenuItem}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BenutzerdatenCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <Grid Grid.Row="5">
+                    <Label Text="Unterstützungsdienst"  Style="{StaticResource MenuItem}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BenutzerdatenCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
 
-        <!-- RightMenu -->
-        <StackLayout
-            xct:SideMenuView.Position="RightMenu"
-            xct:SideMenuView.MenuWidthPercentage=".3"
-            xct:SideMenuView.MenuGestureEnabled="False"
-            BackgroundColor="LightGreen">
-
-            
+                <Grid Grid.Row="6" >
+                    <Label Text="Persönliche Angebote und Werbeaktionen" Style="{StaticResource MenuItem}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BenutzerdatenCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+                <Grid Grid.Row="7" >
+                    <Label Text="Benutzerdaten" Style="{StaticResource MenuItem}">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding BenutzerdatenCommand}" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </Grid>
+            </Grid>
         </StackLayout>
 
     </xct:SideMenuView>

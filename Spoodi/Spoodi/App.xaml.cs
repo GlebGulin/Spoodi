@@ -20,7 +20,7 @@ namespace Spoodi
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainTermPage");
+            await NavigationService.NavigateAsync("NavigationPage/HomePage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -28,10 +28,17 @@ namespace Spoodi
             containerRegistry.RegisterSingleton<IAppInfo, AppInfoImplementation>();
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
-            containerRegistry.RegisterForNavigation<MainTermPage, MainTermPageViewModel>();
-            containerRegistry.RegisterForNavigation<HomeMasterDetailPage>();
+            containerRegistry.RegisterForNavigation<HomePage, MainTermPageViewModel>();
             containerRegistry.RegisterForNavigation<MenuPage, MenuPageViewModel>();
+            
+            //Flyot menu pages
+            containerRegistry.RegisterForNavigation<BenutzerdatenPage>();
+            containerRegistry.RegisterForNavigation<FavoritenPage>();
+            containerRegistry.RegisterForNavigation<AuftragshistoriePage>();
+            containerRegistry.RegisterForNavigation<KartePage>();
+            containerRegistry.RegisterForNavigation<PersonlichePage>();
+            containerRegistry.RegisterForNavigation<UnterstutzungsdienstPage>();
+            containerRegistry.RegisterForNavigation<ZahlungsmittelPage>();
         }
     }
 }

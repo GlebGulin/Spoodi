@@ -7,19 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Spoodi.Views.Pages
+namespace Spoodi.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BenutzerdatenPage : ContentPage
+    public partial class BenutzerdatenPage : BasePage
     {
         public BenutzerdatenPage()
         {
             InitializeComponent();
-        }
-
-        private void ImageButton_Clicked(object sender, EventArgs e)
-        {
-            this.IsVisible = false;
         }
     }
 }

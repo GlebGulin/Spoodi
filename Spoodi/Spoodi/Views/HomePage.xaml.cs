@@ -9,9 +9,9 @@ using Xamarin.CommunityToolkit.UI.Views;
 
 namespace Spoodi.Views
 {
-    public partial class MainTermPage : BasePage
+    public partial class HomePage : BasePage
     {
-        public MainTermPage()
+        public HomePage()
         {
             InitializeComponent();
             SizeChanged += MainPage_SizeChanged;
@@ -221,6 +221,9 @@ namespace Spoodi.Views
 
         public void OnLeftButtonClicked(object? sender, EventArgs e)
             => SideMenuView.State = SideMenuState.LeftMenuShown;
+
+        public void OnLeftLinkClicked(object? sender, EventArgs e)
+           => SideMenuView.State = SideMenuState.MainViewShown;
 
         public void OnRightButtonClicked(object? sender, EventArgs e)
             => SideMenuView.State = SideMenuState.RightMenuShown;

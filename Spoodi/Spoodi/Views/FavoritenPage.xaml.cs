@@ -7,19 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Spoodi.Views.Pages
+namespace Spoodi.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FavoritenPage : ContentPage
+    public partial class FavoritenPage : BasePage
     {
         public FavoritenPage()
         {
             InitializeComponent();
-        }
-
-        private void ImageButton_Clicked(object sender, EventArgs e)
-        {
-            this.IsVisible = false;
         }
     }
 }

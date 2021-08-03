@@ -43,7 +43,7 @@ namespace Spoodi.Controls
         private async void BackArrowButton_Clicked(object sender, EventArgs e)
         {
             // get the parent page
-            await ((MainTermPage)this.GetParentPage()).HidePopover();
+            await ((HomePage)this.GetParentPage()).HidePopover();
         }
 
         int quantityCount = 1;
