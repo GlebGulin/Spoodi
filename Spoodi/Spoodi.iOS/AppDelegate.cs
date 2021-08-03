@@ -1,4 +1,6 @@
-﻿using Foundation;
+﻿using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
+using Foundation;
 using Prism;
 using Prism.Ioc;
 using UIKit;
@@ -22,6 +24,9 @@ namespace Spoodi.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
+            CachedImageRenderer.InitImageSourceHandler();
+            var ignore = typeof(SvgCachedImage);
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);

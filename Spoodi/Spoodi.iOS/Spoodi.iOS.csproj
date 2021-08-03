@@ -211,6 +211,12 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Xamarin.FFImageLoading.Forms">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
+    <PackageReference Include="Xamarin.FFImageLoading.Svg.Forms">
+      <Version>2.4.11.982</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.5.3.2" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
@@ -264,7 +270,10 @@
     <BundleResource Include="Resources\blue_moss.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\green_moss.png" />
+    <AndroidResource Include="Resources\green_moss.png">
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\grey_moss.png" />
@@ -403,6 +412,24 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\yellow_moss%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\card.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\customer_service.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\discount_svgrepo_com.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\history.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\personal_data.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\rate.svg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

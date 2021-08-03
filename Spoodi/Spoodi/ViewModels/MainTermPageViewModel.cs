@@ -7,7 +7,6 @@ using Spoodi.Event;
 using Spoodi.Extensions;
 using Spoodi.Models.ViewModels;
 using Spoodi.Views;
-using Spoodi.Views.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -197,6 +196,9 @@ namespace Spoodi.ViewModels
         public ICommand MenuCommand => new Command(() => _eventAggregator.GetEvent<ToggleMasterDetailMenuEvent>().Publish());
         public ICommand BenutzerdatenCommand => new Command(async () => await NavigationService.NavigateToAsync<BenutzerdatenPage>());
         public ICommand FavoritenCommand => new Command(async () => await NavigationService.NavigateToAsync<FavoritenPage>());
+        public ICommand AuftragshistorieCommand => new Command(async () => await NavigationService.NavigateToAsync<AuftragshistoriePage>());
+        public ICommand ZahlungsmittelCommand => new Command(async () => await NavigationService.NavigateToAsync<ZahlungsmittelPage>());
+        public ICommand KarteCommand => new Command(async () => await NavigationService.NavigateToAsync<KartePage>());
 
         private void Test()
         {

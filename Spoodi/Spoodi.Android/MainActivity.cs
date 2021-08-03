@@ -1,6 +1,8 @@
 ﻿using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using FFImageLoading.Forms.Platform;
+using FFImageLoading.Svg.Forms;
 using Prism;
 using Prism.Ioc;
 
@@ -16,8 +18,11 @@ namespace Spoodi.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-
+            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(true);
+            CachedImageRenderer.InitImageViewHandler();
+            var ignore = typeof(SvgCachedImage);
             LoadApplication(new App(new AndroidInitializer()));
         }
 

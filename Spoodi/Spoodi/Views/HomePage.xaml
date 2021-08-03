@@ -7,10 +7,11 @@
              xmlns:views="clr-namespace:Spoodi.Views;assembly=Spoodi"
              xmlns:viewmodels="clr-namespace:Spoodi.Models.ViewModels"
              xmlns:converters="clr-namespace:Spoodi.Converters"
-            xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:ffimageloadingsvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
              xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
-            xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
-            xmlns:resources="clr-namespace:Spoodi.Resources;assembly=Spoodi"
+             xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+             xmlns:resources="clr-namespace:Spoodi.Resources;assembly=Spoodi"
              xmlns:z="clr-namespace:Xamarin.Forms.BackgroundVideoView;assembly=Xamarin.Forms.BackgroundVideoView">
 
     
@@ -188,11 +189,11 @@
         <!-- LeftMenu -->
         <StackLayout
             xct:SideMenuView.Position="LeftMenu"
-            xct:SideMenuView.MenuWidthPercentage=".7"
+            xct:SideMenuView.MenuWidthPercentage=".75"
             xct:SideMenuView.MainViewScaleFactor=".95"
             BackgroundColor="{x:StaticResource ButtonBackgroundColor}">
 
-            <Grid Margin="30,40">
+            <Grid Margin="8,30">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*" />
                     <RowDefinition Height="*" />
@@ -205,52 +206,138 @@
                 </Grid.RowDefinitions>
                 
                 <Grid Grid.Row="1">
-                    <Label Text="Benutzerdaten" Style="{StaticResource MenuItem}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <ffimageloadingsvg:SvgCachedImage
+                                BackgroundColor="Transparent"
+                                HeightRequest="30"
+                                Grid.Column="0"
+                                HorizontalOptions="Center"
+                                Source="personal_data.svg"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="30" />
+
+                    <Label Text="Benutzerdaten" Style="{StaticResource MenuItem}" Grid.Column="1" VerticalOptions="Center">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnLeftLinkClicked" Command="{Binding BenutzerdatenCommand}"/>
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>
                 <Grid Grid.Row="2">
-                    <Label Text="Favoriten" Style="{StaticResource MenuItem}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <ffimageloadingsvg:SvgCachedImage
+                                BackgroundColor="Transparent"
+                                HeightRequest="30"
+                                Grid.Column="0"
+                                HorizontalOptions="Center"
+                                Source="rate.svg"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="30" />
+                    <Label Text="Favoriten" Style="{StaticResource MenuItem}" Grid.Column="1" VerticalOptions="Center">
                         <Label.GestureRecognizers>
                             <TapGestureRecognizer Tapped="OnLeftLinkClicked" Command="{Binding FavoritenCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>
                 <Grid Grid.Row="3" >
-                    <Label Text="Zahlungsmittel" Style="{StaticResource MenuItem}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <ffimageloadingsvg:SvgCachedImage
+                                BackgroundColor="Transparent"
+                                HeightRequest="30"
+                                Grid.Column="0"
+                                HorizontalOptions="Center"
+                                Source="history.svg"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="30" />
+                    <Label Text="Auftragshistorie" Style="{StaticResource MenuItem}" Grid.Column="1" VerticalOptions="Center">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding BenutzerdatenCommand}" />
+                            <TapGestureRecognizer Tapped="OnLeftLinkClicked" Command="{Binding AuftragshistorieCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>
                 <Grid Grid.Row="4" >
-                    <Label Text="Karte" Style="{StaticResource MenuItem}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <ffimageloadingsvg:SvgCachedImage
+                                BackgroundColor="Transparent"
+                                HeightRequest="40"
+                                Grid.Column="0"
+                                HorizontalOptions="Center"
+                                Source="card.svg"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="40" />
+                    <Label Text="Zahlungsmittel" Style="{StaticResource MenuItem}" Grid.Column="1" VerticalOptions="Center">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding BenutzerdatenCommand}" />
+                            <TapGestureRecognizer Tapped="OnLeftLinkClicked" Command="{Binding ZahlungsmittelCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>
                 <Grid Grid.Row="5">
-                    <Label Text="Unterstützungsdienst"  Style="{StaticResource MenuItem}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <ffimageloadingsvg:SvgCachedImage
+                                BackgroundColor="Transparent"
+                                HeightRequest="30"
+                                Grid.Column="0"
+                                HorizontalOptions="Center"
+                                Source="global.svg"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="30" />
+                    <Label Text="Karte"  Style="{StaticResource MenuItem}" Grid.Column="1" VerticalOptions="Center">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding BenutzerdatenCommand}" />
+                            <TapGestureRecognizer Tapped="OnLeftLinkClicked" Command="{Binding KarteCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>
 
                 <Grid Grid.Row="6" >
-                    <Label Text="Persönliche Angebote und Werbeaktionen" Style="{StaticResource MenuItem}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <ffimageloadingsvg:SvgCachedImage
+                                BackgroundColor="Transparent"
+                                HeightRequest="30"
+                                Grid.Column="0"
+                                HorizontalOptions="Center"
+                                Source="customer_service.svg"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="30" />
+                    <Label Text="Unterstützungsdienst" Style="{StaticResource MenuItem}" Grid.Column="1" VerticalOptions="Center">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding BenutzerdatenCommand}" />
+                            <TapGestureRecognizer Tapped="OnLeftLinkClicked" Command="{Binding BenutzerdatenCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>
                 <Grid Grid.Row="7" >
-                    <Label Text="Benutzerdaten" Style="{StaticResource MenuItem}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="4*"/>
+                    </Grid.ColumnDefinitions>
+                    <ffimageloadingsvg:SvgCachedImage
+                                BackgroundColor="Transparent"
+                                HeightRequest="30"
+                                Grid.Column="0"
+                                HorizontalOptions="Center"
+                                Source="discount_svgrepo_com.svg"
+                                VerticalOptions="CenterAndExpand"
+                                WidthRequest="30" />
+                    <Label Text="Persönliche Angebote und Werbeaktionen" Style="{StaticResource MenuItem}" Grid.Column="1" VerticalOptions="Center">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding BenutzerdatenCommand}" />
+                            <TapGestureRecognizer Tapped="OnLeftLinkClicked" Command="{Binding BenutzerdatenCommand}" />
                         </Label.GestureRecognizers>
                     </Label>
                 </Grid>

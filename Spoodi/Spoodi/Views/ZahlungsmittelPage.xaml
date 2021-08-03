@@ -14,7 +14,6 @@
         <ImageButton
             Margin="20"
             Padding="9"
-            Clicked="ImageButton_Clicked"
             HorizontalOptions="Start"
             Source="back_arrow"
             Style="{StaticResource ButtonStyle}"

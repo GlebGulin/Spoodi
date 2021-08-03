@@ -55,8 +55,8 @@
     <!--  styles  -->
     <Style x:Key="MenuItem" TargetType="Label">
         <Setter Property="FontFamily" Value="{StaticResource MontserratLight}" />
-        <Setter Property="FontSize" Value="25" />
-        <Setter Property="Margin" Value="5,10" />
+        <Setter Property="FontSize" Value="17" />
+        <Setter Property="Margin" Value="2,3" />
         <Setter Property="TextColor" Value="{StaticResource TextColor}" />
     </Style>
     <Style x:Key="HeaderFontLight" TargetType="Label">
