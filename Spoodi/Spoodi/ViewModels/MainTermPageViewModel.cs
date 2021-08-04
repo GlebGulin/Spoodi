@@ -41,146 +41,139 @@ namespace Spoodi.ViewModels
                 new ProductViewModel()
                 {
                     HeroColor = "#95C9F7",
-                    Name="Фитнесс \n меню",
+                    Name="XOT LAC \nERDNUSSSOSSE",
                     Price = 250,
-                    ImageUrl = "blue_moss",
+                    ImageUrl = "curry_bowl",
                     IsFeatured = true,
-                    Description = "Contained in a glass polygonal florarium",
-                    Humidity = "75%",
-                    Light = "5k - 10k lux",
-                    Temperature = "18 - 27 ℃",
+                    Description = "das leckerste essen der welt ",
                     Size = "150x150 mm",
-                    Diameter = "190 mm"
+
                 },
                 new ProductViewModel()
                 {
                     HeroColor = "#FFCA81",
-                    Name="Бургерная",
+                    Name="TRIANGOLINI \nVEGETARISCH",
                     Price = 700,
-                    ImageUrl = "yellow_moss",
+                    ImageUrl = "triangolini",
                     IsFeatured = true,
-                    Description = "Contained in a yellow glass polygonal florarium",
-                    Humidity = "60%",
-                    Light = "5k - 15k lux",
-                    Temperature = "18 - 27 ℃",
+                    Description = "das leckerste essen der welt ",
                     Size = "150x150 mm",
-                    Diameter = "200 mm"
+
                 },
 
                 new ProductViewModel()
                 {
                     HeroColor = "#A2BAD3",
-                    Name="Супер бургерная",
+                    Name="HAMBURGER \nPINK",
                     Price = 500,
-                    ImageUrl = "grey_moss",
+                    ImageUrl = "pink_burger",
                     IsFeatured = true,
-                    Description = "Contained in a glass polygonal florarium",
-                    Humidity = "50%",
-                    Light = "5k - 10k lux",
-                    Temperature = "18 - 27 ℃",
+                    Description = "das leckerste essen der welt ",
                     Size = "150x150 mm",
-                    Diameter = "190 mm"
+
                 },
 
                 new ProductViewModel()
                 {
                     HeroColor = "#F796DD",
-                    Name="Десерты",
+                    Name="BUN BO \nNAM BO",
                     Price = 333,
-                    ImageUrl = "pink_moss",
+                    ImageUrl = "bun_bo",
                     IsFeatured = false,
-                    Description = "Contained in a glass polygonal florarium",
-                    Humidity = "55%",
-                    Light = "5k - 10k lux",
-                    Temperature = "18 - 27 ℃",
+                    Description = "das leckerste essen der welt ",
                     Size = "150x150 mm",
-                    Diameter = "190 mm"
+
                 },
 
                  new ProductViewModel()
                 {
                     HeroColor = "#95C9F7",
-                    Name="Еда Еда",
+                    Name="XOT LAC \nERDNUSSSOSSE",
                     Price = 456,
-                    ImageUrl = "blue_moss",
+                    ImageUrl = "curry_bowl",
                     IsFeatured = false,
-                    Description = "Contained in a glass polygonal florarium",
-                    Humidity = "50%",
-                    Light = "5k - 10k lux",
-                    Temperature = "18 - 27 ℃",
+                    Description = "das leckerste essen der welt ",
                     Size = "150x150 mm",
-                    Diameter = "190 mm"
+
                 },
 
                 new ProductViewModel()
                 {
                     HeroColor = "#D69EFC",
-                    Name="Свежак",
+                    Name="SWEET-\nPOTATO-FRIES",
                     Price = 723,
-                    ImageUrl = "lavender_moss",
+                    ImageUrl = "sweet_p",
                     IsFeatured = false,
-                    Description = "Contained in a glass polygonal florarium",
-                    Humidity = "75%",
-                    Light = "5k - 10k lux",
-                    Temperature = "18 - 27 ℃",
+                    Description = "das leckerste essen der welt ",
                     Size = "150x150 mm",
-                    Diameter = "190 mm"
+
                 },
                 new ProductViewModel()
                 {
                     HeroColor = "#74D69E",
-                    Name="Веганская хрень",
+                    Name="BACON \nCLASSIC BLACK",
                     Price = 140,
-                    ImageUrl = "green_moss",
+                    ImageUrl = "black_burger",
                     IsFeatured = true,
-                    Description = "Contained in a glass polygonal florarium",
-                    Humidity = "50 - 75%",
-                    Light = "5k - 10k lux",
-                    Temperature = "18 - 27 ℃",
+                    Description = "das leckerste essen der welt ",
                     Size = "150x150 mm",
-                    Diameter = "190 mm"
+
                 },
                 new ProductViewModel()
                 {
                     HeroColor = "#FB8183",
-                    Name="Народное \n меню",
+                    Name="PHO HANOI",
                     Price = 210,
-                    ImageUrl = "red_moss",
+                    ImageUrl = "curry_bowl",
                     IsFeatured = false,
-                    Description = "Contained in a glass polygonal florarium",
-                    Humidity = "45%",
-                    Light = "5k - 10k lux",
-                    Temperature = "18 - 27 ℃",
+                    Description = "das leckerste essen der welt ",
                     Size = "150x150 mm",
-                    Diameter = "190 mm"
+
                 },
                 new ProductViewModel()
                 {
                     HeroColor = "#FB9B64",
-                    Name="Рыбное \n меню",
+                    Name="XOT LAC \nERDNUSSSOSSE",
                     Price = 370,
-                    ImageUrl = "orange_moss",
+                    ImageUrl = "hot_lac",
                     IsFeatured = false,
-                    Description = "Contained in a glass polygonal florarium",
-                    Humidity = "55%",
-                    Light = "5k - 10k lux",
-                    Temperature = "18 - 27 ℃",
+                    Description = "das leckerste essen der welt ",
                     Size = "150x150 mm",
-                    Diameter = "190 mm"
+
                 },
                 new ProductViewModel()
                 {
                     HeroColor = "#D69EFC",
-                    Name="Суши",
+                    Name="SWEET-\nPOTATO-FRIES",
                     Price = 865,
-                    ImageUrl = "lavender_moss",
+                    ImageUrl = "sweet_p",
                     IsFeatured = false,
-                    Description = "Contained in a glass polygonal florarium",
-                    Humidity = "65%",
-                    Light = "5k - 10k lux",
-                    Temperature = "18 - 27 ℃",
+                    Description = "das leckerste essen der welt ",
                     Size = "150x150 mm",
-                    Diameter = "190 mm"
+
+                },
+                new ProductViewModel()
+                {
+                    HeroColor = "#95C9F7",
+                    Name="XOT LAC \nERDNUSSSOSSE",
+                    Price = 250,
+                    ImageUrl = "curry_bowl",
+                    IsFeatured = true,
+                    Description = "das leckerste essen der welt ",
+                    Size = "150x150 mm",
+
+                },
+
+                new ProductViewModel()
+                {
+                    HeroColor = "#FFCA81",
+                    Name="TRIANGOLINI \nVEGETARISCH",
+                    Price = 700,
+                    ImageUrl = "triangolini",
+                    IsFeatured = true,
+                    Description = "das leckerste essen der welt ",
+                    Size = "150x150 mm",
+
                 },
 
             };

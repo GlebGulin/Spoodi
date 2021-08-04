@@ -52,18 +52,17 @@
                 </Grid.RowDefinitions>
                 <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="3*" />
-                        <ColumnDefinition Width="2*" />
-                        <ColumnDefinition Width="2*" />
                         <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="0.5*" />
                     </Grid.ColumnDefinitions>
                     <Grid Grid.Column="0" HorizontalOptions="Start">
 
                         <ImageButton Source="hamburger_icon" 
-                                     BackgroundColor="White"
+                                     Padding="10"
+                                     Style="{StaticResource ButtonStyle}"
                                      Clicked="OnLeftButtonClicked">
-                            
-                            
                         </ImageButton>
 
 
@@ -75,8 +74,8 @@
                         <ImageButton
                                         x:Name="BasketIcon"
                                         Padding="10"
-                                        WidthRequest="30"
-                                        BackgroundColor="White"
+                                        Style="{StaticResource ButtonStyle}"
+                                        WidthRequest="20"
                                         Clicked="BasketIcon_Clicked"
                                         Source="basket_icon"
                                          />
