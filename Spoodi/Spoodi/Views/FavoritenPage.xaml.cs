@@ -10,7 +10,7 @@ using Xamarin.Forms.Xaml;
 namespace Spoodi.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FavoritenPage : BasePage
+    public partial class FavoritenPage : ContentPage
     {
         public FavoritenPage()
         {

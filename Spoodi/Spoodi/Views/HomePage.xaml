@@ -33,12 +33,19 @@
                 TrueString="60" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    <xct:SideMenuView x:Name="SideMenuView">
-        <!-- MainView -->
+    
+            <xct:SideMenuView x:Name="SideMenuView">
         
-        <StackLayout BackgroundColor="White"
-                     xct:ShadowEffect.Color="Black">
-            <Grid Margin="30, 30">
+                <!-- MainView -->
+        
+        <!--<StackLayout BackgroundColor="White"
+                     xct:ShadowEffect.Color="Black">-->
+        
+                <StackLayout>
+            <z:BackgroundVideoView Source="Jin_app.m4v" Loop="True"
+          HorizontalOptions="Fill"  VerticalOptions="Fill" >
+                <z:BackgroundVideoView.ViewContent>
+                    <Grid Margin="30, 30">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -102,27 +109,31 @@
                             HorizontalOptions="FillAndExpand">
                         <StackLayout Orientation="Horizontal">
 
-                            <Image HeightRequest="80" Source="Ketch_button2_Schatten"/>
+                                    <Image HeightRequest="80" Margin="5,5,5,5" Source="app"/>
 
-                            <Image HeightRequest="80" Source="logo_bowlroll"/>
+                                    <Image HeightRequest="80" Margin="5,5,5,5" Source="bow"/>
 
-                            <Image HeightRequest="80" Source="logo_bubbletom_1"/>
+                                    <Image HeightRequest="80" Margin="5,5,5,5" Source="fish"/>
 
-                            <Image HeightRequest="80" Source="logo_getraenke"/>
+                                    <Image HeightRequest="80" Margin="5,5,5,5" Source="get"/>
 
-                            <Image HeightRequest="80" Source="logo_happyfish"/>
+                                    <Image HeightRequest="80" Margin="5,5,5,5" Source="pet"/>
 
-                            <Image HeightRequest="80" Source="logo_pho_1"/>
+                                    <Image HeightRequest="80" Margin="5,5,5,5" Source="pho"/>
 
-                            <Image HeightRequest="80" Source="logo_pita_1"/>
+                                    <Image HeightRequest="80" Margin="5,5,5,5" Source="sec"/>
 
-                            <Image HeightRequest="80" Source="logo_risingsun"/>
+                                    <Image HeightRequest="80" Margin="5,5,5,5" Source="sun"/>
 
-                            <Image HeightRequest="80" Source="logo_secret"/>
+                                    <Image HeightRequest="80" Margin="5,5,5,5" Source="tom"/>
 
-                            <Image HeightRequest="80" Source="logo_snack"/>
+                                    <Image HeightRequest="80" Margin="5,5,5,5" Source="app"/>
 
-                        </StackLayout>
+                                    <Image HeightRequest="80" Margin="5,5,5,5" Source="bow"/>
+
+                                    <Image HeightRequest="80" Source="fish"/>
+
+                                </StackLayout>
                     </ScrollView>
                 </Grid>
                 <Grid Grid.Row="2">
@@ -182,6 +193,9 @@
             AbsoluteLayout.LayoutFlags="All"
             IsVisible="False"/>-->
             </Grid>
+                </z:BackgroundVideoView.ViewContent>
+            </z:BackgroundVideoView>
+
         </StackLayout>
 
         
@@ -345,8 +359,8 @@
         </StackLayout>
 
     </xct:SideMenuView>
-    
-    
+
+        
 
 
 </views:BasePage>

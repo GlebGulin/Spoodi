@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<views:BasePage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:Spoodi.Controls"
              xmlns:type="clr-namespace:Spoodi.Controls"
@@ -7,26 +7,34 @@
              xmlns:views="clr-namespace:Spoodi.Views;assembly=Spoodi"
              Padding="0,40,0,0"
              IconImageSource="hamburger_icon"
+             xmlns:z="clr-namespace:Xamarin.Forms.BackgroundVideoView;assembly=Xamarin.Forms.BackgroundVideoView"
              Title="Personal Organiser">
-    <Grid>
-        
-        <ImageButton
+
+    <z:BackgroundVideoView Source="Jin_app.m4v" Loop="True"
+          HorizontalOptions="Fill"  VerticalOptions="Fill" >
+        <z:BackgroundVideoView.ViewContent>
+            <Grid>
+
+                <ImageButton
             Margin="20"
             Padding="9"
             HorizontalOptions="Start"
             Source="back_arrow"
             Style="{StaticResource ButtonStyle}"
             VerticalOptions="Center" />
-    <Label Text="Favoriten"></Label>
-        <ImageButton
+                <Label Text="Favoriten"></Label>
+                <ImageButton
             Margin="20"
             Padding="9"
             HorizontalOptions="Start"
             Source="back_arrow"
+                    Command="{Binding BackCommand}"
             Style="{StaticResource ButtonStyle}"
             VerticalOptions="Center" />
-        <Grid.GestureRecognizers>
-            <TapGestureRecognizer Command="{Binding BackCommand}"/>
-        </Grid.GestureRecognizers>
-    </Grid>
-</views:BasePage>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding BackCommand}"/>
+                </Grid.GestureRecognizers>
+            </Grid>
+        </z:BackgroundVideoView.ViewContent>
+    </z:BackgroundVideoView>
+</ContentPage>
