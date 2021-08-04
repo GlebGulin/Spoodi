@@ -159,11 +159,11 @@
         </StackLayout>
 
         <BoxView
-            Grid.Row="2"
+            Grid.Row="1"
             BackgroundColor="#75D59F"
             CornerRadius="40,40,0,0" />
 
-        <Grid Grid.Row="2" Margin="30">
+        <Grid Grid.Row="1" Margin="30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60" />
                 <RowDefinition Height="*" />
@@ -181,7 +181,7 @@
                 ItemTemplate="{StaticResource CartItemSelector}"
                 ItemsSource="{Binding ShoppingCart.Items}" />
 
-            <Grid Grid.Row="2" Margin="0,20,30,20">
+            <Grid Grid.Row="1" Margin="0,20,30,20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
@@ -216,7 +216,7 @@
 
             <pancake:PancakeView
                 x:Name="CheckOutButton"
-                Grid.Row="3"
+                Grid.Row="2"
                 BackgroundColor="White"
                 CornerRadius="10"
                 HeightRequest="60">

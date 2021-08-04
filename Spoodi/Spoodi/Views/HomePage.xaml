@@ -174,17 +174,7 @@
                         <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1" />
                     </controls:ProductDisplay.GestureRecognizers>
                 </controls:ProductDisplay>
-                <controls:ProductDisplayPopover
-            x:Name="PagePopover"
-            AbsoluteLayout.LayoutBounds="0,0,1,1"
-            AbsoluteLayout.LayoutFlags="All"
-            IsVisible="False" />
-
-                <controls:ShoppingCartPopover
-            x:Name="CartPopover"
-            AbsoluteLayout.LayoutBounds="0,0,1,1"
-            AbsoluteLayout.LayoutFlags="All"
-            IsVisible="False" />
+                
 
                 <!--<controls:PlofilePage
             x:Name="ProfilePopover"
@@ -194,6 +184,22 @@
             </Grid>
                 </z:BackgroundVideoView.ViewContent>
             </z:BackgroundVideoView>
+            <controls:ProductDisplayPopover
+            x:Name="PagePopover"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            IsVisible="False" />
+            <controls:ShoppingCartPopover
+            x:Name="CartPopover"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            IsVisible="False" />
+
+            <!--<controls:ShoppingCartPopover
+            x:Name="CartPopover"
+            AbsoluteLayout.LayoutBounds="0,0,1,1"
+            AbsoluteLayout.LayoutFlags="All"
+            IsVisible="False" />-->
 
         </StackLayout>
 
@@ -355,7 +361,9 @@
                     </Label>
                 </Grid>
             </Grid>
+           
         </StackLayout>
+        
 
     </xct:SideMenuView>
 
