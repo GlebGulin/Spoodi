@@ -110,7 +110,7 @@
                         <Label
                             FontSize="12"
                             Style="{StaticResource ShoppingCartItemLabel}"
-                            Text="Бесплатная доставка при заказе более ₽1000"
+                            Text="GRATIS Versand bei Bestellungen über €1000"
                             TextColor="#ADF4CB" />
                     </StackLayout>
 
@@ -119,7 +119,7 @@
                         Margin="0,0,30,0"
                         HorizontalOptions="End"
                         Style="{StaticResource ShoppingCartItemLabel}"
-                        Text="{Binding FreightCharge, StringFormat='₽{0}'}" />
+                        Text="{Binding FreightCharge, StringFormat='€{0}'}" />
 
 
                 </Grid>
@@ -138,9 +138,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-
+        
         <ImageButton
             Margin="20"
             Padding="9"
@@ -151,7 +151,7 @@
             Style="{StaticResource ButtonStyle}"
             VerticalOptions="Center" />
 
-        <StackLayout Grid.Row="1" Padding="20,0,20,20">
+        <StackLayout Grid.Row="1" Padding="20,20,20,20">
             <Label Style="{StaticResource HeaderFontLight}" Text="Детали заказа:" />
             <skia:SKCanvasView
                 HeightRequest="30"
@@ -160,11 +160,11 @@
         </StackLayout>
 
         <BoxView
-            Grid.Row="1"
+            Grid.Row="2"
             BackgroundColor="#75D59F"
             CornerRadius="40,40,0,0" />
 
-        <Grid Grid.Row="1" Margin="30">
+        <Grid Grid.Row="2" Margin="30">
             <Grid.RowDefinitions>
                 <RowDefinition Height="60" />
                 <RowDefinition Height="*" />
@@ -173,14 +173,18 @@
             </Grid.RowDefinitions>
 
             <Label
+                Grid.Row="0"
                 Style="{StaticResource HeaderFontMedium}"
                 Text="Ihre Bestellung"
                 TextColor="White" />
-
-            <CollectionView
-                Grid.Row="1"
-                ItemTemplate="{StaticResource CartItemSelector}"
-                ItemsSource="{Binding ShoppingCart.Items}" />
+            <ScrollView Grid.Row="1" >
+                <StackLayout>
+                    <CollectionView
+                    Grid.Row="1"
+                    ItemTemplate="{StaticResource CartItemSelector}"
+                    ItemsSource="{Binding ShoppingCart.Items}" />
+                </StackLayout>
+            </ScrollView>
 
             <Grid Grid.Row="1" Margin="0,20,30,20">
                 <Grid.ColumnDefinitions>
@@ -188,6 +192,7 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Label
+                    Grid.Column="0"
                     FontSize="20"
                     Style="{StaticResource BodyFontMedium}"
                     Text="Gesamt:"
@@ -213,11 +218,12 @@
                         VerticalOptions="Start"
                         VerticalTextAlignment="Start" />
                 </StackLayout>
+                
             </Grid>
-
+            
             <pancake:PancakeView
                 x:Name="CheckOutButton"
-                Grid.Row="2"
+                Grid.Row="0"
                 BackgroundColor="White"
                 CornerRadius="10"
                 HeightRequest="60">
