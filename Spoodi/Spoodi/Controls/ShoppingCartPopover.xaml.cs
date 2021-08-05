@@ -36,7 +36,7 @@ namespace Spoodi.Controls
             SKPaint circlePaint = new SKPaint
             {
                 Style = SKPaintStyle.Stroke,
-                Color = Color.FromHex("#75D59F").ToSKColor(),
+                Color = Color.FromHex("#8d2f36").ToSKColor(),
                 StrokeWidth = 3,
                 IsAntialias = true
             };
@@ -44,7 +44,7 @@ namespace Spoodi.Controls
             SKPaint filledCirclePaint = new SKPaint
             {
                 Style = SKPaintStyle.StrokeAndFill,
-                Color = Color.FromHex("#75D59F").ToSKColor(),
+                Color = Color.FromHex("#8d2f36").ToSKColor(),
                 StrokeWidth = 3,
                 IsAntialias = true
             };
@@ -52,7 +52,7 @@ namespace Spoodi.Controls
             SKPaint dottendLinePaint = new SKPaint
             {
                 Style = SKPaintStyle.Stroke,
-                Color = Color.FromHex("#75D59F").ToSKColor(),
+                Color = Color.FromHex("#8d2f36").ToSKColor(),
                 StrokeWidth = 3,
                 IsAntialias = true,
                 PathEffect = SKPathEffect.CreateDash(new float[] { 20, 15}, 0)

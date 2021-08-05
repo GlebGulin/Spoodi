@@ -90,7 +90,7 @@
                         <RowDefinition Height="Auto" />
                     </Grid.RowDefinitions>
                     <BoxView
-                        BackgroundColor="#50C281"
+                        BackgroundColor="#e64345"
                         CornerRadius="10"
                         HeightRequest="64"
                         HorizontalOptions="Center"
@@ -134,7 +134,7 @@
         </ResourceDictionary>
     </ContentView.Resources>
 
-    <Grid BackgroundColor="White">
+    <Grid BackgroundColor="White" VerticalOptions="StartAndExpand">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
@@ -152,23 +152,27 @@
             VerticalOptions="Center" />
 
         <StackLayout Grid.Row="1" Padding="20,20,20,20">
-            <Label Style="{StaticResource HeaderFontLight}" Text="Детали заказа:" />
+            <Label Style="{StaticResource HeaderFontLight}" Text="Bestelldetails:" />
             <skia:SKCanvasView
                 HeightRequest="30"
                 HorizontalOptions="Fill"
                 PaintSurface="SKCanvasView_PaintSurface" />
         </StackLayout>
 
-        <BoxView
-            Grid.Row="2"
-            BackgroundColor="#75D59F"
-            CornerRadius="40,40,0,0" />
+        <BoxView x:Name="bdGradient" Grid.Row="2" CornerRadius="40,40,0,0">
+            <BoxView.Background>
+                <LinearGradientBrush>
+                    <GradientStop x:Name="lightGrad" Color="#fb4d61" Offset="0"/>
+                    <GradientStop x:Name="drakGrad" Color="#8d2f36" Offset="1"/>
+                </LinearGradientBrush>
+            </BoxView.Background>
+        </BoxView>
 
         <Grid Grid.Row="2" Margin="30">
             <Grid.RowDefinitions>
-                <RowDefinition Height="60" />
+                <RowDefinition Height="70" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
@@ -177,16 +181,13 @@
                 Style="{StaticResource HeaderFontMedium}"
                 Text="Ihre Bestellung"
                 TextColor="White" />
-            <ScrollView Grid.Row="1" >
-                <StackLayout>
-                    <CollectionView
-                    Grid.Row="1"
+            <StackLayout Grid.Row="1" VerticalOptions="StartAndExpand" HeightRequest="350">
+                    <CollectionView  
                     ItemTemplate="{StaticResource CartItemSelector}"
                     ItemsSource="{Binding ShoppingCart.Items}" />
-                </StackLayout>
-            </ScrollView>
+            </StackLayout>    
 
-            <Grid Grid.Row="1" Margin="0,20,30,20">
+            <Grid Grid.Row="2" Margin="0,20,30,20" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
@@ -223,14 +224,14 @@
             
             <pancake:PancakeView
                 x:Name="CheckOutButton"
-                Grid.Row="0"
+                Grid.Row="3"
                 BackgroundColor="White"
                 CornerRadius="10"
                 HeightRequest="60">
                 <Label
                     FontSize="20"
                     HorizontalOptions="Center"
-                    Text="Оплата"
+                    Text="Bezahlen"
                     TextColor="Black"
                     VerticalOptions="Center" />
             </pancake:PancakeView>
