@@ -101,7 +101,7 @@
                     VerticalOptions="Center">
                     <Label
                         FontSize="14"
-                        Text="₽"
+                        Text="€"
                         TranslationY="4"
                         VerticalOptions="Start" />
                     <Label
@@ -120,10 +120,10 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
 
-                <controls:InfoPanel
+                <!--<controls:InfoPanel
                     Title="Скидка"
                     TitleIcon="{Static dave:FAS.Tint}"
-                    Value="{Binding SelectedProduct.Humidity}" />
+                    Value="{Binding SelectedProduct.Humidity}" />-->
 
                 <!--<controls:InfoPanel
                     Title="Light"
@@ -139,15 +139,15 @@
             </Grid>
 
             <StackLayout Grid.Row="3">
-                <Label Style="{StaticResource BodyFontLight}" Text="{Binding SelectedProduct.Description}" />
+                <Label Style="{StaticResource LogoFontOrange}" Text="{Binding SelectedProduct.Description}" />
                 <Label>
                     <Label.FormattedText>
                         <FormattedString>
-                            <Span Style="{StaticResource BodyFontMedium}" Text="Вес: " />
-                            <Span Style="{StaticResource BodyFontLight}" Text="1200гр." />
+                            <Span Style="{StaticResource BodyFontMedium}" Text="Gewicht: " />
+                            <Span Style="{StaticResource BodyFontLight}" Text="1200gr." />
                             <Span Text="  " />
-                            <Span Style="{StaticResource BodyFontMedium}" Text="Упаковка: " />
-                            <Span Style="{StaticResource BodyFontLight}" Text="на двоих" />
+                            <Span Style="{StaticResource BodyFontMedium}" Text="Portion: " />
+                            <Span Style="{StaticResource BodyFontLight}" Text="zwei Personen" />
                         </FormattedString>
                     </Label.FormattedText>
                 </Label>
@@ -162,7 +162,7 @@
                 <Label
                     FontSize="20"
                     HorizontalOptions="Center"
-                    Text="Беру!"
+                    Text="Nehmen!"
                     TextColor="White"
                     VerticalOptions="Center" />
             </pancake:PancakeView>

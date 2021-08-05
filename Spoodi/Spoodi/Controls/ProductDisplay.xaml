@@ -70,7 +70,7 @@
                     Spacing="0">
                     <Label
                         FontSize="14"
-                        Text="₽"
+                        Text="€"
                         TextColor="White"
                         TranslationY="10"
                         VerticalOptions="Start" />

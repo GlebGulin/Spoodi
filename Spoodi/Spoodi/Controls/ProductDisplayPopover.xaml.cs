@@ -28,7 +28,7 @@ namespace Spoodi.Controls
             BackgroundPanel.TranslationY = BackgroundPanel.Height;
 
             // animate up the white background
-            _ = BackgroundPanel.TranslateTo(0, 0, 200);
+            _ = BackgroundPanel.TranslateTo(0, 0, 400);
 
             // animate in the Details
 

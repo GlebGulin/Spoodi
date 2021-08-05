@@ -66,22 +66,21 @@ namespace Spoodi.Controls
             ProductImage.Scale = 1;
             ProductImage.TranslationX = ImageOffsetX;
             ProductImage.TranslationY = ImageOffsetY;
-
-            // destination rect
+            //destination rect
             //var destRect = new Rectangle(
             //    x: (bounds.Width / 2) - (this.Width / 2),
             //    y: 40,
             //    width: this.Width,
             //    height: this.Height
             //    );
-            var destRect = new Rectangle(
-                x: 0,
-                y: 0,
-                width: this.Width,
-                height: this.Height
-                );
+            var destRect = new Rectangle();
 
-
+            destRect.X = 120;
+            destRect.Y = 40;
+            destRect.Top = 40;
+            destRect.Width = 170;
+            destRect.Bottom = 280;
+            destRect.Height = 240;
             _ = AddBackground.FadeTo(0, animationSpeed / 2);
             _ = AddButton.FadeTo(0, animationSpeed / 2);
             _ = NameLabel.FadeTo(0, animationSpeed / 2);
