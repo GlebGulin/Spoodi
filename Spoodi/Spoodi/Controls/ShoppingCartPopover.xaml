@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:pancake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
     xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-    xmlns:vm="clr-namespace:Spoodi.Models.ViewModels"
+    xmlns:vm="clr-namespace:Spoodi.ViewModels"
     mc:Ignorable="d">
 
     <ContentView.Resources>
@@ -60,7 +60,7 @@
                         Grid.Column="3"
                         HorizontalOptions="End"
                         Style="{StaticResource ShoppingCartItemLabel}"
-                        Text="{Binding Total, StringFormat='₽{0}'}" />
+                        Text="{Binding Total, StringFormat='€{0}'}" />
                     <Label
                         Grid.Column="4"
                         Padding="10"
@@ -68,7 +68,7 @@
                         Style="{StaticResource ShoppingCartItemLabel}"
                         Text="x">
                         <Label.GestureRecognizers>
-                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainViewModel}}, Path=RemoveItemCommand}" CommandParameter="{Binding .}" />
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:MainTermPageViewModel}}, Path=RemoveItemCommand}" CommandParameter="{Binding .}" />
                         </Label.GestureRecognizers>
                     </Label>
 
@@ -106,7 +106,7 @@
                         Grid.Column="1"
                         Margin="20,0"
                         Orientation="Vertical">
-                        <Label Style="{StaticResource ShoppingCartItemLabel}" Text="Доставить?" />
+                        <Label Style="{StaticResource ShoppingCartItemLabel}" Text="Liefern?" />
                         <Label
                             FontSize="12"
                             Style="{StaticResource ShoppingCartItemLabel}"
@@ -144,6 +144,7 @@
         <ImageButton
             Margin="20"
             Padding="9"
+            Grid.Row="0"
             Clicked="ImageButton_Clicked"
             HorizontalOptions="Start"
             Source="back_arrow"
@@ -167,13 +168,13 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="60" />
                 <RowDefinition Height="*" />
-                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
             <Label
                 Style="{StaticResource HeaderFontMedium}"
-                Text="Ваш заказ"
+                Text="Ihre Bestellung"
                 TextColor="White" />
 
             <CollectionView
@@ -189,7 +190,7 @@
                 <Label
                     FontSize="20"
                     Style="{StaticResource BodyFontMedium}"
-                    Text="Всего:"
+                    Text="Gesamt:"
                     TextColor="White"
                     VerticalOptions="Center" />
                 <StackLayout
@@ -200,7 +201,7 @@
                     <Label
                         FontSize="14"
                         Style="{StaticResource BodyFontMedium}"
-                        Text="₽"
+                        Text="€"
                         TextColor="White"
                         TranslationY="4"
                         VerticalOptions="Start" />
