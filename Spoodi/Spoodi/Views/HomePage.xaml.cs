@@ -215,6 +215,8 @@ namespace Spoodi.Views
             // display the page popover
             PagePopover.Opacity = 0;
             PagePopover.IsVisible = true;
+            var grid = FindByName("FakeGrid") as Grid;
+            grid.HeightRequest = 600;
             await PagePopover.Expand();
 
         }
@@ -243,7 +245,8 @@ namespace Spoodi.Views
 
             // hide our Page poper
             PagePopover.IsVisible = false;
-
+            var grid = FindByName("FakeGrid") as Grid;
+            grid.HeightRequest = 0;
         }
 
 

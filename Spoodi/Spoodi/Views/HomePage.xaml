@@ -45,12 +45,18 @@
             <z:BackgroundVideoView Source="Jin_app.m4v" Loop="True"
           HorizontalOptions="Fill"  VerticalOptions="Fill" >
                 <z:BackgroundVideoView.ViewContent>
-                    <Grid Margin="30, 30">
+                    <!--<Grid Margin="30, 30">-->
+                    <Grid Grid.Row="0" >
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
-                </Grid.RowDefinitions>
-                <Grid Grid.Row="0">
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" x:Name="FakeGrid">
+                        </Grid>
+                <Grid Grid.Row="1"></Grid>
+                <Grid Grid.Row="2" Margin="30, 30">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="1*" />
                         <ColumnDefinition Width="4*" />
@@ -103,7 +109,7 @@
 
 
                 </Grid>
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="3" Margin="30,0">
                     <ScrollView HorizontalScrollBarVisibility="Never"  HeightRequest="100" Orientation="Horizontal" 
                             HorizontalOptions="FillAndExpand">
                         <StackLayout Orientation="Horizontal">
@@ -135,7 +141,7 @@
                                 </StackLayout>
                     </ScrollView>
                 </Grid>
-                <Grid Grid.Row="2">
+                <Grid Grid.Row="4" Margin="30,0">
                     <ScrollView x:Name="ScrollContainer" AbsoluteLayout.LayoutBounds="10,190, 340, 450">
                         <FlexLayout
                 BindableLayout.ItemsSource="{Binding Products}"
